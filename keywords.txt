@@ -22,8 +22,8 @@ U8G2_FOR_ADAFRUIT_GFX	KEYWORD1
 
 
 begin	KEYWORD2
-drawGlyph	KEYWORD2
-drawUTF8	KEYWORD2
+drawGlyph	KEYWORD2      //画图象字符
+drawUTF8	KEYWORD2      //画UTF8字符
 getUTF8Width	KEYWORD2
 home	KEYWORD2
 setCursor	KEYWORD2

@@ -37,10 +37,17 @@
 
 #include <Adafruit_GFX.h>
 #include "U8g2_for_Adafruit_GFX.h"
-
+#include "u8g2_fonts.h"
 
 //========================================================
-
+#if defined(ESP8266)
+uint8_t u8x8_pgm_read_esp(const uint8_t * addr) 
+{
+    uint32_t bytes;
+    bytes = *(uint32_t*)((uint32_t)addr & ~3);
+    return ((uint8_t*)&bytes)[(uint32_t)addr & 3];
+}
+#endif
 
 
 static uint8_t u8g2_font_get_byte(const uint8_t *font, uint8_t offset)
